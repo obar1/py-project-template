@@ -1,5 +1,5 @@
 def test_ds(get_ll):
-    assert set(["append", "pop", "prepend", "get", "set_value"]).issubset(
+    assert set(["append", "pop", "prepend", "get", "set_value", "remove"]).issubset(
         get_ll.ds_func
     )
 

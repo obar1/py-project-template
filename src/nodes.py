@@ -1,4 +1,8 @@
-# Some Nodes
+"""
+This module provides a basic implementation of Nodes
+"""
+
+
 class Node:
     """Node with next, ll"""
 
