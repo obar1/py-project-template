@@ -10,3 +10,10 @@ def get_node():
 @pytest.fixture
 def get_ll():
     return LinkedList(0)
+
+@pytest.fixture
+def get_ll3():
+    ll= LinkedList(0)
+    ll.append(1)
+    ll.append(2)
+    return ll

@@ -60,16 +60,15 @@ class LinkedList(ADS):
         self.length += 1
         return True
 
-    def pop_first(self):
-        if self.length == 0:
+    def get(self, index):
+        try:
+            assert 0 <= index <= self.length - 1
+            tmp = self.head
+            for _ in range(index):
+                tmp = tmp.next
+            return tmp
+        except:
             return None
-        temp = self.head
-        self.head = self.head.next
-        temp.next = None
-        self.length -= 1
-        if self.length == 0:
-            self.tail = None
-        return temp
 
     def set_value(self, index, value):
         try:
@@ -81,15 +80,16 @@ class LinkedList(ADS):
             return False
         return False
 
-    def get(self, index):
-        try:
-            assert 0 <= index <= self.length - 1
-            tmp = self.head
-            for _ in range(index):
-                tmp = tmp.next
-            return tmp
-        except:
+    def pop_first(self):
+        if self.length == 0:
             return None
+        temp = self.head
+        self.head = self.head.next
+        temp.next = None
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None
+        return temp
 
     def remove(self, index):
         if index < 0 or index >= self.length:
@@ -106,13 +106,16 @@ class LinkedList(ADS):
         return temp
 
     def reverse(self):
-        temp = self.head
-        self.head = self.tail
-        self.tail = temp
-        after = temp.next
-        before = None
-        for _ in range(self.length):
-            after = temp.next
-            temp.next = before
-            before = temp
-            temp = after
+        """
+        Creates a new reversed copy of the linked list.
+        Returns the new reversed linked list instance.
+        """
+        new_list = LinkedList(None)
+        new_list.remove(0)
+
+        current = self.head
+
+        while current:
+            new_list.prepend(current.value)
+            current = current.next
+        return new_list
