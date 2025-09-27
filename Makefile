@@ -1,13 +1,13 @@
 .PHONY: setup clean test lint type-check format check-all
 # Variables
 PYTHON := python3
-VENV := venv
+VENV := .venv
 BIN := $(VENV)/bin
 SRC_DIR := src
 TEST_DIR := tests
 help:
 	@echo "Available commands:"
-	@echo "  make setup         - Create virtual environment and install dependencies"
+	@echo "  make setup         - Create virtual environment and install dependencies with uv"
 	@echo "  make clean        - Remove virtual environment and cache files"
 	@echo " "
 	@echo "  make test         - Run all tests"
@@ -17,9 +17,7 @@ help:
 	@echo "  make format       - Format code with black"
 	@echo "  make refactor     - Run all checks"
 setup:
-	$(PYTHON) -m venv $(VENV)
-	$(BIN)/pip install --upgrade pip
-	$(BIN)/pip install -r requirements.txt
+	uv sync
 clean:
 	rm -rf $(VENV)
 	rm -rf .pytest_cache
@@ -27,12 +25,12 @@ clean:
 	rm -rf .mypy_cache
 	rm -rf **/__pycache__
 test:
-	PYTHONPATH=. $(BIN)/pytest $(TEST_DIR) -v
+	uv run pytest $(TEST_DIR) -v
 lint:
-	$(BIN)/pylint $(SRC_DIR) $(TEST_DIR)
+	uv run pylint $(SRC_DIR) $(TEST_DIR)
 type-check:
-	$(BIN)/mypy $(SRC_DIR) $(TEST_DIR)
+	uv run mypy $(SRC_DIR) $(TEST_DIR)
 format:
-	$(BIN)/black $(SRC_DIR) $(TEST_DIR) 
-	find . -maxdepth 2 -type f -name "*.ipynb" | xargs -I {} bash -c "$(BIN)/black '{}'"
+	uv run black $(SRC_DIR) $(TEST_DIR) 
+	find . -maxdepth 2 -type f -name "*.ipynb" | xargs -I {} bash -c "uv run black '{}'"
 refactor: format lint type-check test 

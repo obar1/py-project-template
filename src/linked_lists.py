@@ -1,6 +1,8 @@
 """
 This module provides a basic implementation of a singly linked list data structure
 """
+from __future__ import annotations
+from typing import Any, Generator, Optional
 
 from src.a_ds import ADS
 from src.nodes import Node
@@ -17,7 +19,7 @@ class LinkedList(ADS):
     """
 
     @property
-    def get_id(self):
+    def get_id(self) -> str:
         """
         Returns the identifier for this data structure.
 
@@ -26,7 +28,7 @@ class LinkedList(ADS):
         """
         return "linked-list"
 
-    def __init__(self, value):
+    def __init__(self, value: Any) -> None:
         """
         Initializes a new LinkedList with a single node containing the given value.
 
@@ -34,11 +36,11 @@ class LinkedList(ADS):
             value: The value to be stored in the initial node.
         """
         new_node = Node(value)
-        self.head = new_node
-        self.tail = new_node
-        self.length = 1
+        self.head: Optional[Node] = new_node
+        self.tail: Optional[Node] = new_node
+        self.length: int = 1
 
-    def print_list(self):
+    def print_list(self) -> Generator[str, None, None]:
         """
         Generates a string representation of each node in the list for printing.
 
@@ -50,7 +52,7 @@ class LinkedList(ADS):
             yield str(temp) + ","
             temp = temp.next
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
         Returns a string representation of the linked list.
 
@@ -59,7 +61,7 @@ class LinkedList(ADS):
         """
         return f"ll:{list(self.print_list())}"
 
-    def append(self, value):
+    def append(self, value: Any) -> bool:
         """
         Appends a new node with the given value to the end of the list.
 
@@ -74,12 +76,13 @@ class LinkedList(ADS):
             self.head = new_node
             self.tail = new_node
         else:
-            self.tail.next = new_node
+            if self.tail:
+                self.tail.next = new_node
             self.tail = new_node
         self.length += 1
         return True
 
-    def pop(self):
+    def pop(self) -> Optional[Node]:
         """
         Removes and returns the last node from the list.
 
@@ -90,18 +93,19 @@ class LinkedList(ADS):
             return None
         temp = self.head
         pre = self.head
-        while temp.next:
+        while temp and temp.next:
             pre = temp
             temp = temp.next
         self.tail = pre
-        self.tail.next = None
+        if self.tail:
+            self.tail.next = None
         self.length -= 1
         if self.length == 0:
             self.head = None
             self.tail = None
         return temp
 
-    def prepend(self, value):
+    def prepend(self, value: Any) -> bool:
         """
         Prepends a new node with the given value to the beginning of the list.
 
@@ -121,7 +125,7 @@ class LinkedList(ADS):
         self.length += 1
         return True
 
-    def get(self, index):
+    def get(self, index: int) -> Optional[Node]:
         """
         Retrieves the node at the specified index.
 
@@ -135,12 +139,13 @@ class LinkedList(ADS):
             assert 0 <= index <= self.length - 1
             tmp = self.head
             for _ in range(index):
-                tmp = tmp.next
+                if tmp:
+                    tmp = tmp.next
             return tmp
         except AssertionError:
             return None
 
-    def set_value(self, index, value):
+    def set_value(self, index: int, value: Any) -> bool:
         """
         Sets the value of the node at the specified index.
 
@@ -160,7 +165,7 @@ class LinkedList(ADS):
             return False
         return False
 
-    def pop_first(self):
+    def pop_first(self) -> Optional[Node]:
         """
         Removes and returns the first node from the list.
 
@@ -170,14 +175,16 @@ class LinkedList(ADS):
         if self.length == 0:
             return None
         temp = self.head
-        self.head = self.head.next
-        temp.next = None
+        if self.head:
+            self.head = self.head.next
+        if temp:
+            temp.next = None
         self.length -= 1
         if self.length == 0:
             self.tail = None
         return temp
 
-    def remove(self, index):
+    def remove(self, index: int) -> Optional[Node]:
         """
         Removes and returns the node at the specified index.
 
@@ -194,13 +201,16 @@ class LinkedList(ADS):
         if index == self.length - 1:
             return self.pop()
         pre = self.get(index - 1)
-        temp = pre.next
-        pre.next = temp.next
-        temp.next = None
-        self.length -= 1
-        return temp
+        if pre:
+            temp = pre.next
+            if temp:
+                pre.next = temp.next
+                temp.next = None
+            self.length -= 1
+            return temp
+        return None
 
-    def reverse(self):
+    def reverse(self) -> LinkedList:
         """
         Creates a new reversed copy of the linked list.
 

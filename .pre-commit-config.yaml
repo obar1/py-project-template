@@ -1,4 +1,12 @@
 repos:
+-   repo: https://github.com/kynan/nbstripout
+    rev: 0.7.1
+    hooks:
+    -   id: nbstripout
+        name: Strip notebook outputs
+        description: Strip outputs from Jupyter notebooks
+        files: \.ipynb$
+
 -   repo: local
     hooks:
     -   id: make-refactor
