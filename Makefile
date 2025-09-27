@@ -35,3 +35,4 @@ format:
 	uv run black $(SRC_DIR) $(TEST_DIR) 
 	find . -maxdepth 2 -type f -name "*.ipynb" | xargs -I {} bash -c "uv run black '{}'"
 refactor: format lint type-check test 
+
