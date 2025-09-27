@@ -1,15 +1,36 @@
+# https://pre-commit.com
+
+default_language_version:
+  python: python3.12
+fail_fast: true
 repos:
--   repo: https://github.com/kynan/nbstripout
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: "v5.0.0"
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: "v0.9.9"
+    hooks:
+      - id: ruff
+      - id: ruff-format
+  - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
-    -   id: nbstripout
+      - id: nbstripout
         name: Strip notebook outputs
         description: Strip outputs from Jupyter notebooks
         files: \.ipynb$
-
--   repo: local
+  - repo: local
     hooks:
-    -   id: make-refactor
+      - id: make-refactor
         name: Run make-refactor
         entry: make refactor VERBOSE=1
         language: system
