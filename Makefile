@@ -7,7 +7,7 @@ SRC_DIR := src
 TEST_DIR := tests
 help:
 	@echo "Available commands:"
-	@echo "  make setup         - Create virtual environment and install dependencies with uv"
+	@echo "  make setup         - Create virtual environment, install dependencies with uv, and install pre-commit hooks"
 	@echo "  make clean        - Remove virtual environment and cache files"
 	@echo " "
 	@echo "  make test         - Run all tests"
@@ -18,6 +18,7 @@ help:
 	@echo "  make refactor     - Run all checks"
 setup:
 	uv sync
+	uv run pre-commit install
 clean:
 	rm -rf $(VENV)
 	rm -rf .pytest_cache
