@@ -2,6 +2,7 @@
 This module provides a basic implementation of a generic data structure
 """
 from abc import ABC
+from typing import Set
 
 
 class ADS(ABC):
@@ -10,14 +11,14 @@ class ADS(ABC):
     """
 
     @property
-    def get_id(self):
+    def get_id(self) -> str:
         """
         get_id
         """
         return "id"
 
     @property
-    def ds_func(self):
+    def ds_func(self) -> Set[str]:
         """
         simple way to get methods exposed
         """
