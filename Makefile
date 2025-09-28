@@ -16,6 +16,7 @@ help:
 	@echo "  make format       - Format code with black"
 	@echo "  make refactor     - Run all checks"
 setup:
+	curl -LsSf https://astral.sh/uv/install.sh | sh
 	uv sync
 	uv run pre-commit install
 clean:
