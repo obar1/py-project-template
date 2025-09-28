@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "py-project-template"
-version = "0.1.0"
-description = "Simple py-project template"
+version = "0.3.0"
+description = "Simple py project template"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 dependencies = [
     "anyio==4.9.0",
     "argon2-cffi==23.1.0",
@@ -159,10 +159,10 @@ packages = ["src"]
 
 [tool.black]
 line-length = 88
-target-version = ['py310']
+target-version = ['py312']
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
