@@ -7,11 +7,10 @@ SRC_DIR := src
 TEST_DIR := tests
 help:
 	@echo "Available commands:"
-	@echo "  make setup         - Create virtual environment, install dependencies with uv, and install pre-commit hooks"
+	@echo "  make setup        - Create virtual environment, install dependencies with uv, and install pre-commit hooks"
 	@echo "  make clean        - Remove virtual environment and cache files"
 	@echo " "
 	@echo "  make test         - Run all tests"
-	@echo " "
 	@echo "  make lint         - Run pylint"
 	@echo "  make type-check   - Run mypy type checking"
 	@echo "  make format       - Format code with black"
@@ -32,7 +31,9 @@ lint:
 type-check:
 	uv run mypy $(SRC_DIR) $(TEST_DIR)
 format:
-	uv run black $(SRC_DIR) $(TEST_DIR) 
+	uv run black $(SRC_DIR) $(TEST_DIR)
 	find . -maxdepth 2 -type f -name "*.ipynb" | xargs -I {} bash -c "uv run black '{}'"
-refactor: format lint type-check test 
-
+refactor: format lint type-check test
+gwip:
+	git add -A && git commit -m "wip $$(date +%F)" && git push
+gpush: refactor gwip
