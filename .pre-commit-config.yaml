@@ -28,8 +28,9 @@ repos:
         files: \.ipynb$
   - repo: local
     hooks:
-      - id: make-refactor
-        name: make-refactor
-        entry: make refactor VERBOSE=1
+      - id: pytest
+        name: run-pytest
+        entry: pytest
         language: system
+        types: [python]
         pass_filenames: false

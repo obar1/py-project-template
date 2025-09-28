@@ -1,6 +1,7 @@
 """
 This module provides a basic implementation of a singly linked list data structure
 """
+
 from __future__ import annotations
 from typing import Any, Generator, Optional
 

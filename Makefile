@@ -11,10 +11,6 @@ help:
 	@echo "  make clean        - Remove virtual environment and cache files"
 	@echo " "
 	@echo "  make test         - Run all tests"
-	@echo "  make lint         - Run pylint"
-	@echo "  make type-check   - Run mypy type checking"
-	@echo "  make format       - Format code with black"
-	@echo "  make refactor     - Run all checks"
 setup:
 	curl -LsSf https://astral.sh/uv/install.sh | sh
 	uv sync
@@ -27,14 +23,5 @@ clean:
 	rm -rf **/__pycache__
 test:
 	uv run pytest $(TEST_DIR) -v
-lint:
-	uv run pylint $(SRC_DIR) $(TEST_DIR)
-type-check:
-	uv run mypy $(SRC_DIR) $(TEST_DIR)
-format:
-	uv run black $(SRC_DIR) $(TEST_DIR)
-	find . -maxdepth 2 -type f -name "*.ipynb" | xargs -I {} bash -c "uv run black '{}'"
-refactor: format lint type-check test
-gwip:
+gpush:
 	git add -A && git commit -m "wip $$(date +%F)" && git push
-gpush: refactor gwip

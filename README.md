@@ -11,7 +11,5 @@ use make with uv
 ex
 ```bash
 make setup
-
-# each time new code is ready for PRs :P
-make refactor
 ```
+`pre-commit`  will run check at each commit
