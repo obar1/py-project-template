@@ -7,7 +7,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Install uv
-      uses: astral-sh/setup-uv@v4
+      uses: astral-sh/setup-uv@e11b01402ab645392c7ad6044db63d37e4fd1e745e015306993b07695ea5f9f8
+      with:
+        version: "latest"
     - name: make setup
       run: make setup
     - name: make refactor
