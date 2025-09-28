@@ -1,19 +1,31 @@
 name: Makefile CI
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
+
 jobs:
   build:
+    name: Build and Refactor
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout repository
+    - name: 📦 Checkout repository
       uses: actions/checkout@v4
-    - name: Install uv
-      uses: astral-sh/setup-uv@e11b01402ab645392c7ad6044db63d37e4fd1e745e015306993b07695ea5f9f8
+
+    - name: ⚙️ Install uv
+      uses: astral-sh/setup-uv@v6
       with:
         version: "latest"
-    - name: make setup
+
+    - name: 🧰 Run `make setup`
       run: make setup
-    - name: make refactor
+
+    - name: 🧹 Run `make refactor`
       run: make refactor
-    - name: List files in the repository
-      run: |
-        ls ${{ github.workspace }}
+
+    - name: 📁 List files in workspace
+      run: ls -la "${{ github.workspace }}"
