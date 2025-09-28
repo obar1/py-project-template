@@ -8,3 +8,10 @@ venv/
 
 # uv
 .python-version
+
+
+# Python egg metadata
+*.egg-info/
+*.egg
+dist/
+build/
