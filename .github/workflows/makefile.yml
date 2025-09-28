@@ -12,10 +12,9 @@ jobs:
     - name: 📦 Checkout repository
       uses: actions/checkout@v4
 
-    - name: ⚙️ Install uv
-      uses: astral-sh/setup-uv@b75a909f75acd358c2196fb9a5f1299a9a8868a4
+    - name: 🧰 Run `make setup`
+      run: make setup
 
     - name: 🧪 Run pre-commit checks
       run: |
-        pip install pre-commit
         pre-commit run --all-files
