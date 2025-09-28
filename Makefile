@@ -3,8 +3,6 @@
 PYTHON := python3
 VENV := .venv
 BIN := $(VENV)/bin
-SRC_DIR := src
-TEST_DIR := tests
 help:
 	@echo "Available commands:"
 	@echo "  make setup        - Create virtual environment, install dependencies with uv, and install pre-commit hooks"
@@ -18,10 +16,13 @@ setup:
 clean:
 	rm -rf $(VENV)
 	rm -rf .pytest_cache
+	rm -rf .ruff_cache
 	rm -rf .coverage
 	rm -rf .mypy_cache
 	rm -rf **/__pycache__
+	rm -rf *.egg-info
+	uv run pre-commit uninstall
 test:
-	uv run pytest $(TEST_DIR) -v
+	uv run pytest -x
 gpush:
 	git add -A && git commit -m "wip $$(date +%F)" && git push
