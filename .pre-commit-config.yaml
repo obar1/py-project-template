@@ -25,12 +25,11 @@ repos:
     rev: 0.7.1
     hooks:
       - id: nbstripout
-        name: Strip notebook outputs
         files: \.ipynb$
   - repo: local
     hooks:
       - id: make-refactor
-        name: Run make-refactor
+        name: make-refactor
         entry: make refactor VERBOSE=1
         language: system
         pass_filenames: false
