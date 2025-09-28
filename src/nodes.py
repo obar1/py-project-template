@@ -1,6 +1,7 @@
 """
 This module provides a basic implementation of Nodes
 """
+
 from __future__ import annotations
 from typing import Any, Optional
 

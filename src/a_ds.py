@@ -1,6 +1,7 @@
 """
 This module provides a basic implementation of a generic data structure
 """
+
 from abc import ABC
 from typing import Set
 
