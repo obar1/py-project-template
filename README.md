@@ -27,7 +27,7 @@ chmod +x ./set_gcp.sh
 
 ./set_gcp.sh project_123
 
-```
+```sh
 [here](./set_gcp.sh)
 
 [here](/.devcontainer/)
