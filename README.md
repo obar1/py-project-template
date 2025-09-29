@@ -16,7 +16,7 @@ make setup
 
 > some devcontainer conf for auto setup in codespace
 
-![alt text](image.png)
+![alt text](630fffff-faf2-4db0-8b3d-9b72e290dd37.png)
 
 ## snippets
 
@@ -28,6 +28,12 @@ to auth in gcp project
 chmod +x ./set_gcp.sh
 ./set_gcp.sh project_123
 ```
+
+and if `you dare` you could this repo in a cloud shell and use it
+> be careful, gcp is watching you
+
+![alt text](./f335dd0e-350a-4f0d-9774-a042eee9e59.png)
+
 
 ### NB PLAYGROUND
 > do ` << 1 ` :)
@@ -71,8 +77,4 @@ chmod +x ./set_gcp.sh
 > handy for draft prs
 !!! squash and rebase qhen ready
 
-![alt text](image-1.png)
-
-x
-
-
+![alt text](4d62318e-7046-4cae-94d3-3e17ca906593.png)
