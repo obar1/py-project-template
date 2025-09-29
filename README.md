@@ -17,6 +17,19 @@ make setup
 
 ## snippets
 
+### SET GCP
+to auth in gcp project
+```sh
+chmod +x ./set_gcp.sh
+
+./set_gcp.sh project_123
+
+```
+[here](./set_gcp.sh)
+
+> you need to use docker image
+[here](/.devcontainer/)
+
 ### PLAYGROUND
 > do ` << 1 ` :)
 

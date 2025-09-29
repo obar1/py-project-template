@@ -1,0 +1,12 @@
+{
+	"name": "Main Dev Container - General purpose (Debian)",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python","ms-azuretools.vscode-containers"
+			]
+		}
+
+	},
+	"postStartCommand": "make setup"
+}
