@@ -12,9 +12,8 @@ jobs:
     - name: 📦 Checkout repository
       uses: actions/checkout@v4
 
-    - name: 🧰 Run `make setup`
+    - name: 🧰 Run setup
       run: make setup
 
-    - name: 🧪 Run pre-commit checks
-      run: |
-        uv run pre-commit run --all-files
+    - name: 🧪 Run check
+      run: make check
