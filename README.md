@@ -9,7 +9,7 @@ simple py-project template
 ## init
 use make with uv
 ex
-```bash
+```sh
 make setup
 ```
 `pre-commit`  will run check at each commit
@@ -22,22 +22,18 @@ make setup
 
 ### SET GCP
 to auth in gcp project
-```sh
-chmod +x ./set_gcp.sh
-
-./set_gcp.sh project_123
-
-```sh
 [here](./set_gcp.sh)
 
-[here](/.devcontainer/)
+```sh
+chmod +x ./set_gcp.sh
+./set_gcp.sh project_123
 ```
 
-### PLAYGROUND
+### NB PLAYGROUND
 > do ` << 1 ` :)
 
 ```txt
-    # PLAYGROUND
+    # NB PLAYGROUND
 
     > here some space to familiarize with the code
 
@@ -76,3 +72,4 @@ chmod +x ./set_gcp.sh
 !!! squash and rebase qhen ready
 
 ![alt text](image-1.png)
+
