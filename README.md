@@ -73,3 +73,6 @@ chmod +x ./set_gcp.sh
 
 ![alt text](image-1.png)
 
+x
+
+
