@@ -22,7 +22,7 @@ clean:
 	rm -rf **/__pycache__
 	rm -rf *.egg-info
 	uv run pre-commit uninstall
-test:
-	uv run pytest -x
+check:
+	uv run pre-commit run --all-files
 gpush:
 	git add -A && git commit -m "wip $$(date +%F)" && git push

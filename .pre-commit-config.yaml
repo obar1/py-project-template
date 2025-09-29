@@ -37,6 +37,5 @@ repos:
       - id: pytest
         name: run-pytest
         language: system
-        entry: pytest
+        entry: uv run pytest -x -v --tb=short --maxfail=3
         pass_filenames: false
-        stages: [pre-push]
