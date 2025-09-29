@@ -31,6 +31,7 @@ chmod +x ./set_gcp.sh
 [here](./set_gcp.sh)
 
 [here](/.devcontainer/)
+```
 
 ### PLAYGROUND
 > do ` << 1 ` :)
@@ -68,3 +69,10 @@ chmod +x ./set_gcp.sh
 
     ```
 ```
+
+### GPUSH
+
+> handy for draft prs
+!!! squash and rebase qhen ready
+
+![alt text](image-1.png)
