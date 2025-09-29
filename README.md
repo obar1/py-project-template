@@ -14,6 +14,9 @@ make setup
 ```
 `pre-commit`  will run check at each commit
 
+> some devcontainer conf for auto setup in codespace
+
+![alt text](image.png)
 
 ## snippets
 
@@ -27,7 +30,6 @@ chmod +x ./set_gcp.sh
 ```
 [here](./set_gcp.sh)
 
-> you need to use docker image
 [here](/.devcontainer/)
 
 ### PLAYGROUND
