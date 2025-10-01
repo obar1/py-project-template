@@ -17,7 +17,6 @@
                 "ms-vscode-remote.remote-wsl",
                 "ms-azuretools.vscode-containers",
                 "njpwerner.autodocstring",
-                "ms-vsliveshare.vsliveshare",
                 "eamodio.gitlens",
                 "mhutchie.git-graph"
             ]
