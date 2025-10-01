@@ -1,39 +1,18 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "py-project-template"
 version = "0.3.0"
-description = "Simple py project template"
 readme = "README.md"
 requires-python = ">=3.12"
+description = "Simple py project template"
+author_email = "obar1+gh@pm.me"
 dependencies = [
     "pre-commit>=4.3.0",
     "pytest>=7.4.3",
 ]
 
-[tool.setuptools]
-packages = ["src"]
-
-[tool.black]
-line-length = 88
-target-version = ['py312']
-
-[tool.mypy]
-python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_defs = true
-
-[tool.pylint.messages_control]
-disable = ["C0114", "C0116"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_paths = ["."]
-
-[tool.uv.workspace]
-members = [
-    "nb",
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pyyaml>=6.0.2",
+    "pre-commit>=3.7.0"
 ]

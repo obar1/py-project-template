@@ -16,7 +16,7 @@ make setup
 
 > some devcontainer conf for auto setup in codespace
 
-![alt text](630fffff-faf2-4db0-8b3d-9b72e290dd37.png)
+![](assets/630fffff-faf2-4db0-8b3d-9b72e290dd37.png)
 
 ## snippets
 
@@ -32,7 +32,7 @@ chmod +x ./set_gcp.sh
 and if `you dare` you could this repo in a cloud shell and use it
 > be careful, gcp is watching you
 
-![alt text](./f335dd0e-350a-4f0d-9774-a042eee9e59.png)
+![](assets/f335dd0e-350a-4f0d-9774-a042eee9e59.png)
 
 
 ### NB PLAYGROUND
@@ -77,4 +77,4 @@ and if `you dare` you could this repo in a cloud shell and use it
 > handy for draft prs
 !!! squash and rebase qhen ready
 
-![alt text](4d62318e-7046-4cae-94d3-3e17ca906593.png)
+![](assets/4d62318e-7046-4cae-94d3-3e17ca906593.png)
