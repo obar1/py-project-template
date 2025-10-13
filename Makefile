@@ -5,10 +5,9 @@ VENV := .venv
 BIN := $(VENV)/bin
 help:
 	@echo "Available commands:"
-	@echo "  make setup        - Create virtual environment, install dependencies with uv, and install pre-commit hooks"
-	@echo "  make clean        - Remove virtual environment and cache files"
-	@echo " "
-	@echo "  make test         - Run all tests"
+	@echo "make setup		- Create virtual environment, install dependencies with uv, and install pre-commit hooks"
+	@echo "make clean		- Remove virtual environment and cache files"
+	@echo "make check		- Run pre-commit checks"
 setup:
 	curl -LsSf https://astral.sh/uv/install.sh | sh
 	uv sync
