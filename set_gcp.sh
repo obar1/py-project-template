@@ -1,6 +1,13 @@
 #!/bin/bash
 
 install_gcloud_and_gsutil() {
+
+  # Skip if already installed
+  if command -v gcloud >/dev/null 2>&1 && command -v gsutil >/dev/null 2>&1; then
+    echo "✅ Google Cloud CLI and gsutil already installed."
+    return 0
+  fi
+
   echo "Adding Google Cloud SDK repository..."
   echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | \
     sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
