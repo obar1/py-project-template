@@ -7,8 +7,7 @@ simple py-project template
 
 
 ## init
-use make with uv
-ex
+> init env and dependencies
 ```sh
 make setup
 ```
@@ -18,7 +17,13 @@ make setup
 
 ![](assets/630fffff-faf2-4db0-8b3d-9b72e290dd37.png)
 
-## snippets
+## check
+> check the code
+```sh
+make check
+```
+
+## extra
 
 ### SET GCP
 to auth in gcp project
@@ -75,6 +80,6 @@ and if `you dare` you could this repo in a cloud shell and use it
 ### GPUSH
 
 > handy for draft prs
-!!! squash and rebase qhen ready
+!!! squash and rebase when ready
 
 ![](assets/4d62318e-7046-4cae-94d3-3e17ca906593.png)
