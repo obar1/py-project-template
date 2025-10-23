@@ -1,0 +1,20 @@
+.pytest_cache/
+__pycache__/
+.venv/
+venv/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cahe/
+
+# editors
+.idea/
+.vscode/
+
+# uv
+.python-version
+
+# Python egg metadata
+*.egg-info/
+*.egg
+dist/
+build/
