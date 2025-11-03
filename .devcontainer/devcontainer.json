@@ -7,14 +7,16 @@
                 "ms-python.python",
                 "ms-vscode.remote-containers",
                 "njpwerner.autodocstring",
-                "mhutchie.git-graph"
-            ]
+                "mhutchie.git-graph",
+                                "ivanzusko.theme-jo-light"
+            ],
+            "settings": {
+                "workbench.colorTheme": "Jo Light"
+            }
         }
     },
-    "waitFor": "onCreateCommand",
-    "postCreateCommand": "",
-    "updateContentCommand": "nohup ./ka &",
     "hostRequirements": {
         "cpus": 2
-    }
+    },
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
 }
