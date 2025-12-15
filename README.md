@@ -27,13 +27,16 @@ git add -A # to add fix and loop to make check
 
 ## use
 
-- [x] add file in [here](src/readme.md) and tests [here](tests/readme.md)
+- [X] add file in [here](src/readme.md) and tests [here](tests/readme.md)
 
 
-- [ ] if `you dare` you could this repo in a cloud shell and use it
+- [X] if `you dare` you could this repo in a cloud shell and use it
 > be careful, gcp is watching you
 
 ![](assets/f335dd0e-350a-4f0d-9774-a042eee9e59.png)
 
-and add py in [here](nb/readme.md)
-ex [01](nb/01.ipynb)
+and add nb code in
+[here](nb/readme.md)
+
+exm
+[01](nb/01.ipynb)
