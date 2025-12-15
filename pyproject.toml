@@ -6,6 +6,8 @@ requires-python = ">=3.12"
 description = "Simple py project template"
 author_email = "obar1+gh@pm.me"
 dependencies = [
+    "google-genai>=1.55.0",
+    "ipykernel>=7.1.0",
     "pre-commit>=4.3.0",
     "pytest>=7.4.3",
 ]

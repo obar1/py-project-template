@@ -8,10 +8,11 @@
                 "ms-vscode.remote-containers",
                 "njpwerner.autodocstring",
                 "mhutchie.git-graph",
-                                "ivanzusko.theme-jo-light"
+                "ivanzusko.theme-jo-light"
             ],
             "settings": {
-                "workbench.colorTheme": "Jo Light"
+                "workbench.colorTheme": "Jo Light",
+                "files.autoSave": "onWindowChange"
             }
         }
     },

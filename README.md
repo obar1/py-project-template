@@ -21,65 +21,19 @@ make setup
 > check the code
 ```sh
 make check
+git add -A # to add fix and loop to make check
 ```
+![](assets/4d62318e-7046-4cae-94d3-3e17ca906593.png)
 
-## extra
+## use
 
-### SET GCP
-to auth in gcp project
-[here](./set_gcp.sh)
+- [x] add file in [here](src/readme.md) and tests [here](tests/readme.md)
 
-```sh
-chmod +x ./set_gcp.sh
-./set_gcp.sh project_123
-```
 
-and if `you dare` you could this repo in a cloud shell and use it
+- [ ] if `you dare` you could this repo in a cloud shell and use it
 > be careful, gcp is watching you
 
 ![](assets/f335dd0e-350a-4f0d-9774-a042eee9e59.png)
 
-
-### NB PLAYGROUND
-> do ` << 1 ` :)
-
-```txt
-    # NB PLAYGROUND
-
-    > here some space to familiarize with the code
-
-    ```bash
-    pwd
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-
-    # vsode
-    mkdir -p .vscode
-    cat > .vscode/settings.json <<'EOF'
-    {
-        "python.defaultInterpreterPath": ".venv/bin/python"
-    }
-    EOF
-    rm -rf .venv
-    export VIRTUAL_ENV="$(pwd)/.venv"
-
-    uv venv .venv
-    uv init
-    uv add ipykernel
-
-    touch 01.ipynb
-    echo "restart vscode, if necessary"
-
-    ```
-
-    ## code and nb
-    [here](./01.ipynb)
-
-    ```
-```
-
-### GPUSH
-
-> handy for draft prs
-!!! squash and rebase when ready
-
-![](assets/4d62318e-7046-4cae-94d3-3e17ca906593.png)
+and add py in [here](nb/readme.md)
+ex [01](nb/01.ipynb)
