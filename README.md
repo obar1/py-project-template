@@ -1,4 +1,4 @@
-# pyproject-template
+# py-project-template
 
 [![Makefile CI](https://github.com/obar1/py-project-template/actions/workflows/makefile.yml/badge.svg)](https://github.com/obar1/py-project-template/actions/workflows/makefile.yml)
 
